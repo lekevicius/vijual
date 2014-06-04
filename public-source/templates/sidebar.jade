@@ -1,0 +1,39 @@
+.block-header( class="type-#{ icon }" )
+  .object-toggles
+    .activation-toggle
+    .editor-color( style="background-color: #{ color }" )
+  .icon( style="background-image:url(images/mainUI/vijualObjectSymbols/#{ icon }.png)" )
+  .names
+    .type= icon
+    input.editor-name( type='text', value=model.get('editor.name') )
+    if (icon == 'track')
+      select.blending-mode
+        option( value='0' selected=model.get('blending')==0 ) Blending: Normal
+        option( value='1' selected=model.get('blending')==1 ) Blending: Add
+        option( value='2' selected=model.get('blending')==2 ) Blending: Subtract
+        option( value='3' selected=model.get('blending')==3 ) Blending: Multiply
+  if (icon != 'track')
+    .delete &times;
+.controls
+  if (icon != 'track')
+    .behaviors
+      .behavior-list
+        each behavior in model.get('behaviors').toArray()
+          .behavior-item( class=( (behavior.get('active') ? 'active' : 'inactive') + ' ' + behavior.groupName ), data-id=behavior.id )
+            .behavior-activation-toggle
+            .name
+              span.className= behavior.name
+              span.type= App.BehaviorGroupNames[behavior.groupName]
+            .delete-behavior.delete &times;
+
+      select.add-new-behavior
+  else
+    .filters
+      .filter-list
+        each filter in model.get('filters').toArray()
+          .filter-item( class=(filter.get('active') ? 'active' : 'inactive'), data-id=filter.id )
+            .filter-activation-toggle
+            .name: span.className= filter.name
+            .delete-filter.delete &times;
+
+      select.add-new-filter

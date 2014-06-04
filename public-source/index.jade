@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    meta( charset="utf-8" )
+    meta( name="viewport", content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" )
+    title Vijual
+    link( rel="shortcut icon", href="img/icons/favicon.ico" )
+    link( rel="stylesheet", href="css/app.css" )
+    meta( name="apple-mobile-web-app-capable", content="yes" )
+    meta( name="apple-mobile-web-app-status-bar-style", content="black" )
+  body
+    #content
+    #font-detect.visually-hidden
+    //- #tempHolder
+
+    script.
+      var hostname;
+
+      function makeid() {
+        var text = "", possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for( var i=0; i < 8; i++ ) text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+      }
+      cacheBuster = makeid();
+
+      //- window.isNodeWebkit = (typeof process === 'object');
+      //-   var nodeWebkitScript = document.createElement('script');
+      //-   nodeWebkitScript.src = 'js/nw.js?'+cacheBuster;
+      //-   document.getElementsByTagName('head')[0].appendChild(nodeWebkitScript);
+      //-   hostname = "0.0.0.0";
+      //- } else {
+
+      if (true) {
+        var liveReloadScript = document.createElement('script');
+        liveReloadScript.src = 'http://'+location.hostname+':9499/livereload.js';
+        document.getElementsByTagName('head')[0].appendChild(liveReloadScript);
+        hostname = location.hostname;
+      }
+
+      var appScript = document.createElement('script');
+      appScript.src = 'http://'+hostname+':9494/js/app.js?'+cacheBuster;
+      document.getElementsByTagName('head')[0].appendChild(appScript);

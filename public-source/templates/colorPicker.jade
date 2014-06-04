@@ -1,0 +1,5 @@
+.color-picker
+  -var index = 0
+  each color in _.first(App.colors, 24)
+    .color-bubble( data-id="#{ index++ }", style="background-color: #{ color }", class="#{ color === current ? 'current' : '' }" )
+

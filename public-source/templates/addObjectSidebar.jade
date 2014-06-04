@@ -1,0 +1,7 @@
+.title Add New Object
+
+.types
+  for value, key in App.objectTypes
+    .object-type( data-type=key )
+      .icon( style="background-image:url(images/mainUI/vijualObjectSymbols/#{ key }.png)" )
+      .name: .text= value.name

@@ -1,0 +1,136 @@
+// Responsive utility classes
+
+@-ms-viewport
+  width device-width
+@media screen and (max-width: 400px)
+  @-ms-viewport
+    width 320px
+
+// Visibility utilities
+
+.visible-t
+  responsive-invisibility()
+  @media screen_tiny_only
+    responsive-visibility()
+  &.visible-s
+    @media screen_small_only
+      responsive-visibility()
+  &.visible-m
+    @media screen_medium_only
+      responsive-visibility()
+  &.visible-l
+    @media screen_large_only
+      responsive-visibility()
+
+.visible-s
+  responsive-invisibility()
+  &.visible-t
+    @media screen_tiny_only
+      responsive-visibility()
+  @media screen_small_only
+    responsive-visibility()
+  &.visible-m
+    @media screen_medium_only
+      responsive-visibility()
+  &.visible-l
+    @media screen_large_only
+      responsive-visibility()
+
+.visible-m
+  responsive-invisibility()
+  &.visible-t
+    @media screen_tiny_only
+      responsive-visibility()
+  &.visible-s
+    @media screen_small_only
+      responsive-visibility()
+  @media screen_medium_only
+    responsive-visibility()
+  &.visible-l
+    @media screen_large_only
+      responsive-visibility()
+
+.visible-l
+  responsive-invisibility()
+  &.visible-t
+    @media screen_tiny_only
+      responsive-visibility()
+  &.visible-s
+    @media screen_small_only
+      responsive-visibility()
+  &.visible-m
+    @media screen_medium_only
+      responsive-visibility()
+  @media screen_large_only
+    responsive-visibility()
+
+
+
+
+
+.hidden-t
+  responsive-visibility()
+  @media screen_tiny_only
+    responsive-invisibility()
+  &.hidden-s
+    @media screen_small_only
+      responsive-invisibility()
+  &.hidden-m
+    @media screen_medium_only
+      responsive-invisibility()
+  &.hidden-l
+    @media screen_large_only
+      responsive-invisibility()
+
+.hidden-s
+  responsive-visibility()
+  &.hidden-t
+    @media screen_tiny_only
+      responsive-invisibility()
+  @media screen_small_only
+    responsive-invisibility()
+  &.hidden-m
+    @media screen_medium_only
+      responsive-invisibility()
+  &.hidden-l
+    @media screen_large_only
+      responsive-invisibility()
+
+.hidden-m
+  responsive-visibility()
+  &.hidden-t
+    @media screen_tiny_only
+      responsive-invisibility()
+  &.hidden-s
+    @media screen_small_only
+      responsive-invisibility()
+  @media screen_medium_only
+    responsive-invisibility()
+  &.hidden-l
+    @media screen_large_only
+      responsive-invisibility()
+
+.hidden-l
+  responsive-visibility()
+  &.hidden-t
+    @media screen_tiny_only
+      responsive-invisibility()
+  &.hidden-s
+    @media screen_small_only
+      responsive-invisibility()
+  &.hidden-m
+    @media screen_medium_only
+      responsive-invisibility()
+  @media screen_large_only
+    responsive-invisibility()
+
+
+
+
+.visible-print
+  responsive-invisibility()
+@media print
+  .visible-print
+    responsive-visibility()
+  .hidden-print
+    responsive-invisibility()

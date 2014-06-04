@@ -1,0 +1,186 @@
+global-reset()
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td
+    reset-box-model()
+    reset-font()
+  body
+    reset-body()
+  ol, ul
+    list-style none
+  table
+    reset-table()
+  caption, th, td
+    reset-table-cell()
+  a img
+    border none
+
+nested-reset()
+  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+  pre, a, abbr, acronym, address, code, del, dfn, em, img,
+  dl, dt, dd, ol, ul, li, fieldset, form, label,
+  legend, caption, tbody, tfoot, thead, tr
+    reset-box-model()
+    reset-font()
+  table
+    reset-table()
+  caption, th, td
+    reset-table-cell()
+  a img
+    border none
+
+reset-box-model()
+  margin 0
+  padding 0
+  border 0
+  outline 0
+
+reset-font()
+  font-weight inherit
+  font-style inherit
+  font-family inherit
+  font-size 100%
+  vertical-align baseline
+
+reset-body()
+  line-height 1
+  color black
+  background white
+
+reset-table()
+  border-collapse collapse
+  border-spacing 0
+  vertical-align middle
+
+reset-table-cell()
+  text-align left
+  font-weight normal
+  vertical-align middle
+
+reset-html5()
+  article, aside, canvas, details, figcaption,
+  figure, footer, header, hgroup, menu, nav,
+  section, summary, main
+    reset-box-model()
+    display block
+  audio, canvas, video
+    display inline-block
+    .ie7 &
+      display inline
+      zoom 1
+  audio:not([controls]), [hidden]
+    display none
+    height 0
+
+*, *:before, *:after
+  box-sizing border-box
+
+global-reset()
+reset-html5()
+
+svg:not(:root)
+  overflow hidden
+
+html
+  font-size 62.5%
+  -webkit-text-size-adjust 100%
+  -ms-text-size-adjust 100%
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+
+blockquote, q
+	quotes "\201C" "\201D" "\2018" "\2019"
+	&:before, &:after
+		content ''
+		content none
+
+a
+	font-size 100%
+	vertical-align baseline
+	background transparent
+
+img
+  vertical-align: middle
+
+
+
+textarea
+  overflow auto
+  vertical-align top
+
+input[type="radio"]
+  vertical-align text-bottom
+
+input[type="checkbox"]
+  vertical-align bottom
+
+button, input, select, textarea
+  margin 0
+  font-family inherit
+  font-size 100%
+  line-height inherit
+  background-image none
+
+button
+  width auto
+  overflow visible
+
+fieldset
+  border 1px solid #c0c0c0
+  margin 0 2px
+  padding 0.35em 0.625em 0.75em
+
+legend
+  border 0
+  padding 0
+
+button, input, select
+  line-height normal
+  text-transform none
+  vertical-align middle
+
+button, html input[type="button"], input[type="reset"], input[type="submit"]
+  -webkit-appearance button
+  cursor pointer
+label
+  cursor pointer
+
+button[disabled], html input[disabled]
+  cursor default
+
+input[type="checkbox"], input[type="radio"]
+  box-sizing border-box
+  padding 0
+
+input[type="search"]
+  -webkit-appearance textfield
+  -moz-box-sizing content-box
+  -webkit-box-sizing content-box
+  box-sizing content-box
+
+input[type="search"]::-webkit-search-cancel-button
+input[type="search"]::-webkit-search-decoration
+  -webkit-appearance none
+
+button::-moz-focus-inner, input::-moz-focus-inner
+  border 0
+  padding 0
+
+
+
+
+
+.ie7
+  legend
+    margin-left -7px
+  input[type="checkbox"]
+    vertical-align baseline
+  img
+    -ms-interpolation-mode bicubic
+.ie8
+  img
+    width auto

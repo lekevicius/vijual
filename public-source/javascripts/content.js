@@ -1,0 +1,23 @@
+//= models/trackFilters/base.coffee
+//= models/trackFilters/invert.coffee
+//...... models/trackFilters/chromaticAberration.coffee
+//= models/trackFilters/dotScreen.coffee
+//= models/trackFilters/grayscale.coffee
+//= models/trackFilters/halftone.coffee
+//= models/trackFilters/sepia.coffee
+//= models/trackFilters/noise.coffee
+//= models/trackFilters/boxBlur.coffee
+//= models/trackFilters/pixelate.coffee
+//= models/trackFilters/rgbSplit.coffee
+//= models/trackFilters/led.coffee
+
+//= behaviors/intro/fadeIn.coffee
+//= behaviors/outro/fadeOut.coffee
+//= behaviors/looping/control3d.coffee
+//= behaviors/looping/spin3d.coffee
+//= behaviors/trigger/placeInCenter.coffee
+//= behaviors/operator/floatToAngle.coffee
+//= behaviors/operator/multiplyBy.coffee
+//= behaviors/operator/sum.coffee
+//= behaviors/generator/random.coffee
+//= behaviors/generator/sineWave.coffee

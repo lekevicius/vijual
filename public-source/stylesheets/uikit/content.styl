@@ -1,0 +1,319 @@
+body
+  font-family font_body
+  font-size font_size_base
+  line-height line_height_base
+  font-weight 400
+
+  @media screen_small_min
+    font-size font_size_base * 1.1
+  @media screen_medium_min
+    font-size font_size_base * 1.25
+
+body, select, input, textarea
+  color #444
+
+#content
+  text-shadow 0 0 1px rgba(0, 0, 0, 0.01)
+
+// Body text
+
+a
+  color key_color
+  text-decoration none
+
+  &:hover
+    // text-decoration underline
+
+  &:focus
+    tab-focus()
+  &:hover, &:active
+    outline none
+
+  &[rel='reference']
+    margin 0 5px
+
+  &.contains-image, img
+    border none
+
+p
+  margin: 1.2em 0 1.5em 0;
+
+  &.error
+    font-size 1.6em
+    line-height 1.4em
+    margin-bottom 1em
+
+  &.lead
+    margin-bottom 1.7em
+    font-size 1.3em
+
+// Emphasis & misc
+
+cite
+  font-style normal
+
+// Headings
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  font-family font_heading
+  font-weight normal
+  line-height 1.3em
+  font-weight 600
+  margin-top 1em
+  margin-bottom 0.4em
+
+  small
+    font-weight 400
+    line-height 1
+    color #888
+
+h1, .h1
+  font-size 2.6em
+  font-weight 300
+  margin-top 0.4em
+  small
+    font-weight 300
+h2, .h2
+  font-size 2em
+h3, .h3
+  font-size 1.6em
+h4, .h4
+  font-size 1.4em
+h5, .h5
+  font-size 1.2em
+  font-weight 400
+h6, .h6
+  font-size 1em
+  text-transform uppercase
+  letter-spacing 1px
+  font-weight 400
+
+h1, h2, h3, .h1, .h2, .h3
+  small
+    font-size 65%
+h4, h5, h6, .h4, .h5, .h6
+  small
+    font-size 80%
+
+// Media
+
+img
+  max-width 100%
+  height auto
+  border-radius 2px
+
+  &.rounded
+    border-radius 10px
+  &.circle
+    border-radius 50%
+  &.responsive
+    responsive-img()
+
+.video
+  position relative
+  padding-bottom 56.25%
+  height 0
+  overflow hidden
+
+  iframe, object, embed
+    absolute top left
+    size 100%
+
+// Lists
+
+ul, ol
+  margin 0.8em 0 1.2em 1.8em
+
+  li
+    margin-top 0.3em
+    margin-bottom 0.3em
+
+  &.unstyled
+    padding-left 0
+    list-style none
+    margin-left 0
+
+  &.inline
+    padding-left 0
+    list-style none
+    margin-left 0
+    > li
+      display inline-block
+      padding-right 0.8em
+
+  ul, ol
+    margin-top 0.3em
+    margin-bottom 0.3em
+ul
+  list-style-type disc
+ol
+  list-style-type decimal
+
+// Description Lists
+
+dl
+  margin-bottom 1.2em
+
+  &.horizontal
+    @media screen_medium_min
+      dt
+        float left
+        width 40%
+        clear left
+        text-align right
+        text-overflow()
+      dd
+        margin-left 45%
+        clearfix()
+dt
+  font-weight bold
+dd
+  margin-left 0
+
+
+
+
+// Blockquotes
+
+// blockquote
+//   padding 0.4em 0.8em 0.4em 1.6em
+//   margin 0 -15px 1.2em -15px
+//   border-left 5px solid #999
+
+//   @media screen_large_min
+//     margin-left -25px
+//     margin-right -25px
+
+//   p
+//     font-style italic
+//     &:first-child
+//       margin-top 0
+//     &:last-child
+//       margin-bottom 0
+
+//     em
+//       font-style normal
+
+//   small
+//     display block
+//     line-height 1.4
+//     color #777
+
+//     &:before
+//       content '\2014 \00A0'
+
+//   &.feature
+//     border-left 0
+//     margin 30px 0
+//     padding-left 0
+//     padding-right 0
+
+//     p
+//       text-align center
+//       font-size 1.3em
+
+//     @media screen_large_min
+//       margin-left -45px
+//       margin-right -45px
+//       p
+//         font-size 1.4em
+
+//   &.pull-left
+//     margin-right 30px
+
+//   &.pull-right
+//     padding-right 20px
+//     padding-left 10px
+//     border-right 5px solid #999
+//     border-left 0
+//     margin-left 30px
+
+//     p, small
+//       text-align right
+
+//     small
+//       &:before
+//         content: ''
+//       &:after
+//         content: '\00A0 \2014'
+
+q:before, q:after, blockquote:before, blockquote:after
+  content ""
+
+// Misc
+
+hr
+  box-sizing content-box
+  display block
+  height 1px
+  border 0
+  border-top 1px solid #999
+  margin 2em 0
+  padding 0
+
+ins
+  background-color #ff9
+  color #000
+  text-decoration none
+mark
+  background-color #ff9
+  color #000
+del
+  text-decoration line-through
+dfn
+  font-style italic
+
+b, strong, th
+  font-weight bold
+i, em
+  font-style italic
+
+small
+  font-size 80%
+
+sub, sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+  padding 0 3px
+sup
+  top -0.5em
+sub
+  bottom -0.25em
+
+abbr[title], dfn[title]
+  border-bottom 1px dotted
+  cursor help
+  &.initialism
+    font-size 90%
+    text-transform uppercase
+
+address
+  display block
+  margin-bottom 22px
+  font-style normal
+  line-height 1.4
+
+
+.footnotes
+  font-size 0.9em
+  color #555
+
+  &:before
+    width 30%
+    height 0
+    border-top 1px solid #bbb
+    display block
+    content ""
+  p
+    margin-bottom 20px
+  a.reversefootnote
+    padding-left 0.6em
+
+sup
+  padding 0
+  a
+    margin 0
+    padding 0 4px 5px 4px

@@ -1,0 +1,280 @@
+#sidebar
+  overflow scroll
+  position absolute
+  top 40px
+  right 0
+  bottom 0
+  background #000
+  width sidebarWidth
+  z-index 20
+
+  &.add-object
+    background-color rgba(#999, 0.4)
+  &.add-behaviour
+    background #440a0a
+
+  .sidebar-block
+    margin 10px
+    position relative
+    border-radius 5px
+
+    .block-header
+      border-radius 5px
+      box-shadow 0 1px 0 rgba(#fff, 0.2) inset, 0 -1px 0 rgba(#000, 0.5) inset
+      clearfix()
+
+      .object-toggles
+        float left
+        width 20px
+        height 60px
+        margin 0 12px 0 12px
+
+        .activation-toggle
+          width 20px
+          height 16px
+          margin 12px 0 0 0
+          border-radius 5px
+          background rgba(#fff, 0.3)
+          border 1px solid rgba(#fff, 0.6)
+          // box-shadow 0 0 1px 0 rgba(#fff, 0.4) inset
+
+        .editor-color
+          width 20px
+          height 16px
+          margin 4px 0 0 0
+          border-radius 5px
+          box-shadow 0 0 1px 0 rgba(#fff, 0.5) inset
+
+
+      .icon
+        width 36px
+        height 36px
+        background-position center center
+        background-repeat no-repeat
+        background-size contain
+        opacity 0.4
+        margin 12px 12px 12px 6px
+        float left
+        display none
+
+      .names
+        float left
+
+        .type
+          text-transform uppercase
+          opacity 0.7
+          font-size 13px
+          margin 8px 0 4px 0
+          line-height 0.9
+        .editor-name
+          background transparent
+          border 0
+          border-bottom 1px solid rgba(#fff, 0.1)
+          color #fff
+          font-size 16px
+          height 26px
+          width 160px
+          padding 3px 0
+          &:focus
+            border-bottom-color rgba(#fff, 0.6)
+
+
+
+        select.blending-mode
+          display block
+          width 220px
+          font-size 12px
+          height 28px
+          margin 8px 0 14px 0
+          background transparent
+          color white
+          -webkit-appearance inherit
+          padding 0 10px
+          border 1px solid rgba( #fff, 0.3 )
+
+      &.type-track .names .editor-name
+        width 220px
+
+      .delete
+        float right
+        font-size 32px
+        line-height 0.65
+        font-weight 300
+        width 20px
+        height 20px
+        margin 16px 8px 0 0
+        text-align center
+        color #fff
+        opacity 0.4
+        &:hover
+          opacity 1
+
+    .controls
+      .object-controls, .behavior-controls
+        padding 8px
+
+      .behaviors, .filters
+        padding 8px
+
+        .behavior-list, .filter-list
+
+          .filter-item
+            cursor ns-resize
+          .behavior-item, .filter-item
+            height 40px
+            clearfix()
+
+            .behavior-activation-toggle, .filter-activation-toggle
+              float left
+              width 20px
+              height 20px
+              margin 10px 12px 0 4px
+              border-radius 5px
+              border 1px solid rgba(#fff, 0.6)
+              background rgba(#fff, 0.3)
+            &.inactive .behavior-activation-toggle, &.inactive .filter-activation-toggle
+              background transparent
+
+            .name
+              float left
+              padding 8px 0
+              font-size 14px
+              .type
+                opacity 0.4
+                padding-left 6px
+              .className
+                opacity 0.8
+
+            .delete
+              float right
+              font-size 32px
+              line-height 0.65
+              font-weight 300
+              width 20px
+              height 20px
+              margin 10px 0 0 0
+              text-align center
+              color #fff
+              opacity 0.4
+              &:hover
+                opacity 1
+
+            &.trigger
+              cursor pointer
+              &:hover .className
+                border-bottom 1px solid #fff
+
+        select
+          width 100%
+          background rgba(#000, 0.4)
+          color rgba(#fff, 0.6)
+          font-size 14px
+          padding 0 10px
+          height 36px
+          margin 12px 0 0 0
+          border 0
+          -webkit-appearance inherit
+
+    .color-picker
+      width 230px
+      padding 7px
+      clearfix()
+      background rgba(#000, 0.8)
+      box-shadow 0 1px 0 rgba(#fff, 0.2) inset
+      border-radius 9px
+      position absolute
+      top 32px
+      left 12px
+      z-index 50
+      box-shadow 0 4px 12px rgba(#000, 0.8)
+
+      .color-bubble
+        width 32px
+        height 24px
+        border-radius 5px
+        margin 2px
+        float left
+        box-shadow 0 0 1px 0 #fff inset
+        &.current
+          box-shadow 0 0 0 2px #fff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .sidebar-block.inactive
+    background-color #444 !important
+
+    .block-header
+      background-color #444 !important
+
+      .object-toggles
+
+        .activation-toggle
+          background transparent
+          // box-shadow 0 0 1px 0 #000 inset
+
+        .editor-color
+          // box-shadow 0 0 1px 0 #fff inset
+
+
+
+
+
+.behavior-item, .filter-item
+
+  &.ui-sortable-helper
+    background rgba(#000, 0.4)
+    box-shadow 0 0 0 1px rgba(#fff, 0.3)
+
+  height 40px
+  clearfix()
+
+  .behavior-activation-toggle, .filter-activation-toggle
+    float left
+    width 20px
+    height 20px
+    margin 10px 12px 0 4px
+    border-radius 5px
+    border 1px solid rgba(#fff, 0.6)
+    background rgba(#fff, 0.3)
+  &.inactive .behavior-activation-toggle, &.inactive .filter-activation-toggle
+    background transparent
+
+  .name
+    float left
+    padding 8px 0
+    font-size 14px
+    .type
+      opacity 0.4
+      padding-left 6px
+    .className
+      opacity 0.8
+
+  .delete
+    float right
+    font-size 32px
+    line-height 0.65
+    font-weight 300
+    width 20px
+    height 20px
+    margin 10px 0 0 0
+    text-align center
+    color #fff
+    opacity 0.4
+    &:hover
+      opacity 1
+
+  &.trigger
+    cursor pointer
+    &:hover .className
+      border-bottom 1px solid #fff

@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta( charset="utf-8" )
+    meta( name="viewport", content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" )
+    title Vijual Renderer
+    link( rel="stylesheet", href="css/app.css" )
+  body#render-body( onload="resizeCanvas()", style="font-size:0" )
+    canvas#renderer
+    script.
+      function resizeCanvas() {
+        c = document.getElementById('renderer');
+        c.width = App.config.renderer.width;
+        c.height = App.config.renderer.height;
+      };
+

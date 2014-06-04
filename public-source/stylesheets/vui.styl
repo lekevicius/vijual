@@ -1,0 +1,122 @@
+.vui-text, .vui-textarea
+  .vui-control-element
+    input, textarea
+      border 1px solid rgba(UIColor, 0.5)
+      background transparent
+      color rgba(#fff, 0.5)
+      font-size 16px
+      padding 0 16px
+      border-radius 0
+      width 100%
+      height 100%
+
+    &:active
+    &:focus
+      border-color UIColor
+      color #fff
+
+
+.vui-list, .vui-media
+
+  .vui-control-element
+    border 1px solid rgba( UIColor, 0.5 )
+
+  .vui-control-element:active
+  .vui-control-element:active .optionList li
+    border-color UIColor
+    border-bottom 1px solid UIColor
+    color #fff
+
+  .optionList
+    list-style none
+    margin 0
+    padding 0
+    font 12pt BrandonUI
+    letter-spacing 1px
+    height 100%
+    overflow scroll
+    color rgba( #fff, 0.6 )
+    -webkit-overflow-scrolling touch
+
+    li
+      height 48px
+      border-bottom 1px solid rgba( UIColor, 0.5 )
+
+  .vui-control-element:active .optionList li:last-child,
+  .optionList li:last-child
+    border-bottom 0
+
+  .optionList li.selected
+    background: rgba(UIColor, 0.5)
+    border-bottom 0
+    color #fff
+
+.vui-list
+  .optionList li
+    padding 13px 0 13px 16px
+
+.vui-media
+  li
+    clearfix()
+  .thumbnail
+    margin 4px 0 0 8px
+    float left
+  span
+    margin 15px 0 0 12px
+    display block
+    font-size 14px
+    float left
+    width 70%
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+
+
+.vui-element.disabled
+  pointer-events none
+
+.vui-text, .vui-textarea
+  &.disabled
+    .vui-control-element
+      input, textarea
+        &, &:active, &:focus
+          color rgba( DisabledColor, 0.6 )
+          border-color rgba(DisabledColor, 0.5)
+
+.vui-list, .vui-media
+  &.disabled
+    .vui-control-element
+      border-color rgba( DisabledColor, 0.5 )
+
+    .vui-control-element:active,
+    .vui-control-element:active .optionList li
+      border-color rgba( DisabledColor, 0.5 )
+      color rgba( DisabledColor, 0.6 )
+
+    .optionList
+      color rgba( DisabledColor, 0.6 )
+      pointer-events none
+      overflow hidden
+      -webkit-overflow-scrolling none
+
+    .optionList li
+      border-color rgba( DisabledColor, 0.5 )
+
+    .optionList li.selected,
+    .vui-control-element:active .optionList li.selected
+      background rgba( DisabledColor, 0.5 )
+      color DisabledColor
+
+
+.vui-input, .vui-output
+  .outlet-tag
+    position absolute
+    top 4px
+    left 4px
+    right 4px
+    height 8px
+    border-radius 6px 6px 0 0
+.vui-input .outlet-tag
+  background rgba(#2cffb2, 0.5)
+.vui-output .outlet-tag
+  background rgba(#FFD015, 0.5)

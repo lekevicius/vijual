@@ -1,0 +1,15 @@
+.recordings
+  - index = 0
+  each recording in recordings
+    .recording( data-number=index )
+      - index++
+      .playAction
+        .name <span>►</span> Recording #{ index }
+        - totalSeconds = Math.ceil(recording.frames / 60)
+        - seconds = totalSeconds % 60
+        - displaySeconds = seconds
+        if seconds < 10
+        - displaySeconds = "0" + seconds
+        - minutes = Math.floor(totalSeconds / 60)
+        .duration #{ minutes }:#{ displaySeconds }
+      .deleteAction &times;

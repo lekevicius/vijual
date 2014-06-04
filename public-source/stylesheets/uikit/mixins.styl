@@ -1,0 +1,207 @@
+// Layout Utilities
+
+
+content-vertical-align()
+  position relative
+  top 50%
+  transform translateY(-50%)
+
+clearfix()
+  &:before, &:after
+    content ' '
+    display table
+  &:after
+    clear both
+
+size()
+  if length(arguments) == 1
+    width arguments[0]
+    height arguments[0]
+  else
+    width arguments[0]
+    height arguments[1]
+
+center-block()
+  display block
+  margin-left auto
+  margin-right auto
+
+box-sizing()
+  box-sizing arguments
+
+ie7-inline-block()
+  .ie7 &
+    display inline
+    zoom 1
+
+// Position Utilities
+
+//  fixed: <pos> [n] <pos> [n]
+//  absolute: <pos> [n] <pos> [n]
+//  relative: <pos> [n] <pos> [n]
+//  Examples:
+//    fixed: top left
+//    fixed: top 5px left
+//    fixed: top left 5px
+//    fixed: top 5px left 5px
+
+-pos(type, args)
+  i = 0
+  position: s(type)
+  {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+  if ( length(args) > i + 1 )
+    {args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+  if ( length(args) > i + 1 )
+    {args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+  if ( length(args) > i + 1 )
+    {args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+fixed()
+  -pos('fixed', arguments)
+absolute()
+  -pos('absolute', arguments)
+relative()
+  -pos('relative', arguments)
+
+// Transforms and Transitions
+
+// rotate(degrees)
+//   transform s('rotate('+degrees+')')
+// scale(ratio)
+//   transform s('scale('+ratio+')')
+// translate(x = 0, y = 0)
+//   transform s('translate('+ x + ', ' + y +')')
+// skew(x = 0, y = 0)
+//   transform s('skew('+ x + ', ' + y +');')
+// translate3d(x = 0, y = 0, z = 0)
+//   transform translate(x, y, z)
+
+// Decoration
+
+placeholder-color(color)
+  &:-moz-placeholder
+    color color
+  &::-moz-placeholder
+    color color
+  &:-ms-input-placeholder
+    color color
+  &::-webkit-input-placeholder
+    color color
+
+tab-focus()
+  outline thin dotted #333
+  outline 5px auto -webkit-focus-ring-color
+  outline-offset -2px
+
+border-top-radius(radius)
+  border-top-right-radius radius
+   border-top-left-radius radius
+border-right-radius(radius)
+  border-bottom-right-radius radius
+  border-top-right-radius radius
+border-bottom-radius(radius)
+  border-bottom-right-radius radius
+  border-bottom-left-radius radius
+border-left-radius(radius)
+  border-bottom-left-radius radius
+  border-top-left-radius radius
+
+hide-text()
+  font 0/0 a
+  color transparent
+  text-shadow none
+  background-color transparent
+  border 0
+
+resizable(direction) // horizontal, vertical, both
+  resize direction
+  overflow auto
+
+// Text Utilities
+
+text-overflow() // Requires inline-block or block
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+hyphens(mode = auto)
+  word-wrap break-word
+  hyphens mode
+
+// Responsive Utilities
+
+retina-background-image(image_url, image_width = auto, image_height = auto, min_pixel_ratio = 1.3)
+
+  ext = extname(image_url)
+  standard_path = pathjoin(dirname(image_url), basename(image_url, ext) + ext)
+  background-image url(standard_path)
+
+  qry = 'only screen and (-webkit-min-device-pixel-ratio:' + min_pixel_ratio + '), '
+  qry = qry + 'only screen and (min--moz-device-pixel-ratio:' + min_pixel_ratio + '), '
+  qry = qry + 'only screen and (-o-min-device-pixel-ratio:' + min_pixel_ratio + '/1), '
+  qry = qry + 'only screen and (min-device-pixel-ratio:' + min_pixel_ratio + '), '
+  qry = qry + 'only screen and (min-resolution:' + unit(min_pixel_ratio * 96, dpi) + '), '
+  qry = qry + 'only screen and (min-resolution:' + unit(min_pixel_ratio, dppx) + ')'
+
+  @media qry
+
+    image_height = null if image_width in (cover contain) and image_height == auto
+    image_width = image-size(image_url)[0] if image_width == auto
+    image_height = image-size(image_url)[1] if image_height == auto
+    ext = extname(image_url)
+    retina_path = pathjoin(dirname(image_url), basename(image_url, ext) + '@2x' + ext)
+    &
+      background-image url(retina_path)
+      background-size image_width image_height
+
+responsive-img(display = block)
+  display display
+  max-width 100%
+  height auto
+
+responsive-visibility()
+  display block !important
+  tr &
+    display table-row !important
+  th &, td &
+    display table-cell !important
+
+responsive-invisibility()
+  display none !important
+  tr &
+    display none !important
+  th &, td &
+    display none !important
+
+// Gradients
+
+gradient-horizontal(start_color = #555, end_color = #333, start_percent = 0%, end_percent = 100%)
+  background-image linear-gradient(to right, start_color start_percent, end_color end_percent)
+  background-repeat repeat-x
+
+gradient-vertical(start_color = #555, end_color = #333, start_percent = 0%, end_percent = 100%)
+  background-image linear-gradient(to bottom, start_color start_percent, end_color end_percent)
+  background-repeat repeat-x
+
+gradient-directional(start_color = #555, end_color = #333, angle = 45deg)
+  background-image linear-gradient(angle, start_color, end_color)
+  background-repeat repeat-x
+
+gradient-horizontal-three-colors(start_color = #00b3ee, mid_color = #7a43b6, color_stop = 50%, end_color = #c3325f)
+  background-image linear-gradient(to right, start_color, mid_color color_stop, end_color)
+  background-repeat no-repeat
+
+gradient-vertical-three-colors(start_color = #00b3ee, mid_color = #7a43b6, color_stop = 50%, end_color = #c3325f)
+  background-image linear-gradient(start_color, mid_color color_stop, end_color)
+  background-repeat no-repeat
+
+gradient-radial(inner_color = #555, outer_color = #333)
+  background-image radial-gradient(circle, inner_color, outer_color)
+  background-repeat no-repeat
+
+gradient-striped(color = #555, angle = 45deg)
+  background-color color
+  shade = rgba(255,255,255,.15)
+  background-image linear-gradient(angle, shade 25%, transparent 25%, transparent 50%, shade 50%, shade 75%, transparent 75%, transparent)
+
+ie-reset-gradient()
+  filter s('progidDXImageTransform.Microsoft.gradient(enabled = false)')

@@ -1,0 +1,6 @@
+.block( class=object.get('active') ? 'active' : 'inactive' )
+  .block-background( style="background-color: #{ color }" )
+  .object-icon( style="background-image:url(images/mainUI/vijualObjectSymbols/#{ object.get('type') }.png)" )
+  .object-opacity-bar( style="background-color: #{ color }; width: #{ object.get('material.opacity') * 100 + '%' }" )
+  .object-activation-toggle
+  .object-name= object.get('editor.name')

@@ -1,0 +1,138 @@
+.vui-element
+  position absolute
+
+  .vui-control-holder
+    padding 0
+    margin 0
+    position relative
+    width 100%
+    height 100%
+
+    canvas, .vui-control, .vui-control-canvas, .vui-control-element
+      position absolute
+
+    .vui-control-canvas, .vui-control-element
+      left 4px
+      top 4px
+    .vui-outlet-canvas
+      left 4px
+      bottom 4px
+
+    &.rotated-outlet
+      .vui-control-canvas, .vui-control-element
+        top 4px
+        right 4px
+        left auto
+      .vui-outlet-canvas
+        top 4px
+        left 4px
+        bottom auto
+
+.properties-grid
+  width 961px
+  margin 16px auto 32px auto
+  user-select none
+  background url('../images/controlSurfaceUI/grid-background.png')
+  padding 1px 0 0 0
+
+  .properties-group
+    background rgba(red, 0.15)
+    border-radius 6px
+    margin 20px 0 0 0
+
+    header
+      clearfix()
+      position relative
+      height 60px
+
+      h3
+        color #fff
+        font-family 'BrandonUI', sans-serif
+        text-transform uppercase
+        position absolute
+        height 60px
+        width 961px
+        border-radius 6px
+        padding 16px 20px
+        letter-spacing 1px
+        font-size 18px
+        background rgba(red, 0.25)
+        box-shadow 0 1px 0 rgba(#fff, 0.2) inset
+
+      .toggler
+        position absolute
+        top 12px
+        right 12px
+        width 36px
+        height 36px
+        border-radius 50%
+        background center center no-repeat
+        cursor pointer
+
+        &.expand
+          background-image url('../images/controlSurfaceUI/vui.group.expand.png')
+        &.collapse
+          background-image url('../images/controlSurfaceUI/vui.group.collapse.png')
+
+    .controls
+      display block
+      position relative
+
+      .control
+        border 2px solid rgba(#f00, 0.3)
+        position absolute
+
+#propertiesModalBackground
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background rgba(#000, 0.8)
+
+  .propertiesModal
+    width 600px
+    position absolute
+    top 50%
+    transform translateY(-50%)
+    left 50%
+    margin-left -300px
+    color UIColor
+
+    .recordings
+      .recording
+        clearfix()
+        height 80px
+        margin 4px 0 4px 0
+
+        .playAction
+          width 518px
+          float left
+          height 80px
+          background rgba(#c42127, 0.6)
+          cursor pointer
+          &:hover, &:active
+            background rgba(#c42127, 0.8)
+
+          .name, .duration
+            display inline-block
+            font-size 20px
+            margin 24px 0 0 20px
+
+          .name
+            span
+              padding-right 16px
+
+        .deleteAction
+          float right
+          width 78px
+          height 80px
+          background rgba(#c42127, 0.3)
+          text-align center
+          font-size 40px
+          padding 8px 0 0 0
+          color rgba(UIColor, 0.4)
+          cursor pointer
+          &:hover, &:active
+            background rgba(#c42127, 0.8)
+            color UIColor

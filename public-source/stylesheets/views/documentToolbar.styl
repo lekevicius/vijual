@@ -1,0 +1,133 @@
+#documentToolbar
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 40px
+  background #000
+  border-bottom 1px solid #000
+  overflow hidden
+
+  button
+    background-color transparent
+    background-position 12px center
+    background-repeat no-repeat
+    // background-size 16px 16px
+    border 1px solid rgba(#fff, 0.1)
+    border-radius 4px
+    height 32px
+    font-size 13px
+    padding 0 8px 0 36px
+    color rgba(#fff, 0.6)
+    cursor default
+
+    &:active
+      color #fff
+      border-color rgba(UIColor, 0.8)
+      background-color rgba(UIColor, 0.2)
+
+    &.new-file
+      background-image url(../images/mainUI/toolbarIcons/new.png)
+      &:active
+        background-image url(../images/mainUI/toolbarIcons/newActive.png)
+    &.load-file
+      background-image url(../images/mainUI/toolbarIcons/open.png)
+      &:active
+        background-image url(../images/mainUI/toolbarIcons/openActive.png)
+    &.save-file
+      background-image url(../images/mainUI/toolbarIcons/save.png)
+      &:active
+        background-image url(../images/mainUI/toolbarIcons/saveActive.png)
+    &.add-object
+      background-image url(../images/mainUI/toolbarIcons/addObject.png)
+      &:active
+        background-image url(../images/mainUI/toolbarIcons/addObjectActive.png)
+    &.new-render-window
+      background-image url(../images/mainUI/toolbarIcons/render.png)
+      &:active, &.active
+        color #a61113
+        background-color rgba(#a61113, 0.2)
+        background-image url(../images/mainUI/toolbarIcons/renderActive.png)
+      &:active
+        border-color rgba(#a61113, 0.8)
+    &.new-props-window
+      background-image url(../images/mainUI/toolbarIcons/props.png)
+      &:active, &.active
+        color #1c78ad
+        background-color rgba(#1c78ad, 0.2)
+        background-image url(../images/mainUI/toolbarIcons/propsActive.png)
+      &:active
+        border-color rgba(#1c78ad, 0.8)
+    &.new-scene-window
+      background-image url(../images/mainUI/toolbarIcons/scene.png)
+      &:active, &.active
+        color #74007a
+        background-color rgba(#74007a, 0.2)
+        background-image url(../images/mainUI/toolbarIcons/sceneActive.png)
+      &:active
+        border-color rgba(#74007a, 0.8)
+    &.toggle-stats
+      background-image url(../images/mainUI/toolbarIcons/stats.png)
+      &:active, &.active
+        color #21a46a
+        background-color rgba(#21a46a, 0.2)
+        background-image url(../images/mainUI/toolbarIcons/statsActive.png)
+      &:active
+        border-color rgba(#21a46a, 0.8)
+
+  .branding
+    float left
+    height 32px
+    margin 4px 12px 4px 12px
+
+    .logo
+      float left
+      size 32px
+      margin 0 12px 0 0
+      background url(../images/mainUI/logo.png) no-repeat
+    .app-name
+      float left
+      text-transform uppercase
+      font-weight 500
+      padding 3px 0
+      letter-spacing 0.3em
+
+  .file-actions
+    float left
+    height 32px
+    margin 4px 0 4px 12px
+
+    button
+      margin-right 6px
+
+  .app-actions
+    float right
+    height 32px
+    margin 4px 12px 4px 0
+
+    button
+      margin-left 6px
+
+  .bpm
+    display block
+    float right
+    width 100px
+
+    button.sync-button
+      width 48px
+      padding 0 8px
+      margin-right 0
+      border-radius 4px 0 0 4px
+
+    input.bpm-value
+      width 40px
+      text-align center
+      background-color transparent
+      border 1px solid rgba(#fff, 0.1)
+      border-left 0
+      border-radius 0 4px 4px 0
+      height 32px
+      font-size 13px
+      padding 0 8px 0 8px
+      color rgba(#fff, 0.6)
+

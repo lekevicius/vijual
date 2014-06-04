@@ -1,0 +1,49 @@
+{
+  "name": "Vijual",
+  "version": "0.0.1",
+  "description": "Live, directly manipulated visual composition platform",
+  "main": "public/index.html",
+  "node-main": "server.js",
+  "author": "Jonas Lekevicius",
+  "license": "MIT",
+  "chromium-args": "--ignore-gpu-blacklist --disable-accelerated-2d-canvas",
+  "window": {
+    "title": "Vijual",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 600,
+    "position": "mouse",
+    "min_width": 800,
+    "min_height": 600
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "dependencies": {
+    "coffee-script": "~1.7.1",
+    "faye": "~1.0.1",
+    "node-static": "~0.7.3",
+    "midi-parser": "~0.1.0",
+    "midi-api": "~0.2.0",
+    "websocket": "~1.0.8",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-stylus": "~0.13.0",
+    "grunt-contrib-jade": "~0.10.0",
+    "grunt-autoprefixer": "~0.7.1",
+    "grunt-nodemon": "~0.2.0",
+    "grunt-rigger": "~0.5.0",
+    "grunt-node-webkit-builder": "~0.1.17",
+    "grunt-concurrent": "~0.4.3",
+    "grunt-text-replace": "~0.3.11",
+    "grunt-three-obj": "~0.3.0",
+    "grunt-glsl-threejs": "~0.1.4"
+  }
+}

@@ -1,0 +1,11 @@
+section#documentToolbar
+
+section#tracks
+
+section#objectGrid
+  .r#objectHolder
+    each column in [0, 1, 2, 3, 4, 5, 6, 7]
+      each row in [0, 1, 2, 3, 4, 5, 6, 7]
+        .gridSlot( id="gridSlot_#{ column }_#{ row }", data-x=column, data-y=row, style="left: #{ column * 12.5 }%; top: #{ row * 12.5 }%;" )
+
+section#sidebar
