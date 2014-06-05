@@ -133,12 +133,11 @@
 //= behaviors/operator.coffee
 //= behaviors/generator.coffee
 
-//= behaviors/intro/fadeIn.coffee
+
 //= behaviors/intro/scaleIn.coffee
 //= behaviors/intro/rotateIn.coffee
 //= behaviors/intro/directionalIntros.coffee
 
-//= behaviors/outro/fadeOut.coffee
 //= behaviors/outro/scaleOut.coffee
 //= behaviors/outro/rotateOut.coffee
 //= behaviors/outro/directionalOutros.coffee
@@ -158,6 +157,7 @@
 
 //= behaviors/operator/mathOperators.coffee
 //= behaviors/operator/floatToAngle.coffee
+//= behaviors/operator/screenPositionSetter.coffee
 
 //= behaviors/generator/random.coffee
 //= behaviors/generator/walk.coffee

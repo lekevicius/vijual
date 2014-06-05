@@ -11,6 +11,6 @@ class App.Behaviors.Trigger extends App.Behaviors.Base
     @setupListeners(collection)
     @object = collection.object
 
-  hit: =>  @run() if @get 'active' and @object and @object.get('active')
+  hit: =>  @run()
 
   run: -> console.log "Yeah, run little", @get('object')

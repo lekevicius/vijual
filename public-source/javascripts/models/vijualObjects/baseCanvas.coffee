@@ -14,7 +14,10 @@ class App.VO.BaseCanvas extends App.VO.Base
     'scale': { type: 'exponentialTracker', name: 'Scale', pos: [2, 2, 3, 1] }
     'material.opacity': { type: 'slider', name: 'Opacity', pos: [5, 0, 1, 3] }
     'material.blending' : { type: 'switcher', name: 'Blending', options: [ 'Normal', 'Add', 'Subtract', 'Multiply' ], pos: [6, 0, 1, 3] }
-    'active' : { type: 'toggle', name: 'Active', color: '#ffffff', pos: [7, 0, 1, 3] }
+    'visible' : { type: 'toggle', name: 'Active', color: '#ffffff', hasOutlet: false, pos: [7, 0, 1, 1] }
+    'active' : { type: 'toggle', name: 'Active', color: '#ffffff', pos: [7, 1, 1, 2] }
+    'fadeInDuration': { type: 'slider', name: 'Fade In', max: 5, pos: [0, 3, 4, 1] }
+    'fadeOutDuration': { type: 'slider', name: 'Fade Out', max: 5, pos: [4, 3, 4, 1] }
 
   initialize: (attributes, options) ->
 

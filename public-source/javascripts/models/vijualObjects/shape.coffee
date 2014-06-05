@@ -6,8 +6,8 @@ class App.VO.Shape extends App.VO.BaseCanvas
     'shape.color': '#000000'
 
   attributeControls: -> $.extend super,
-    'shape.shape': { type: 'media', mediaType: 'shapes', name: 'Shape', pos: [8, 0, 4, 6] }
-    'shape.color': { type: 'color', name: 'Color', pos: [0, 3, 4, 3] }
+    'shape.shape': { type: 'media', mediaType: 'shapes', name: 'Shape', pos: [8, 0, 4, 7] }
+    'shape.color': { type: 'color', name: 'Color', pos: [0, 4, 4, 3] }
 
   initialize: (attributes, options) ->
     super

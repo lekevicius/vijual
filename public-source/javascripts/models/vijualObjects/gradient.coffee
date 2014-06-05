@@ -9,10 +9,10 @@ class App.VO.Gradient extends App.VO.BaseCanvas
     'canvas.gradientAngle': 0
 
   attributeControls: -> $.extend super,
-    'canvas.startColor': { type: 'color', name: 'Start', pos: [0, 3, 4, 3] }
-    'canvas.startColorAlpha': { type: 'slider', name: 'Alpha', pos: [4, 3, 2, 3] }
-    'canvas.endColor': { type: 'color', name: 'End', pos: [6, 3, 4, 3] }
-    'canvas.endColorAlpha': { type: 'slider', name: 'Alpha', pos: [10, 3, 2, 3] }
+    'canvas.startColor': { type: 'color', name: 'Start', pos: [0, 4, 4, 3] }
+    'canvas.startColorAlpha': { type: 'slider', name: 'Alpha', pos: [4, 4, 2, 3] }
+    'canvas.endColor': { type: 'color', name: 'End', pos: [6, 4, 4, 3] }
+    'canvas.endColorAlpha': { type: 'slider', name: 'Alpha', pos: [10, 4, 2, 3] }
     'canvas.gradientAngle': { type: 'angle', name: 'Angle', pos: [8, 0, 4, 3] }
 
 

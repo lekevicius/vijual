@@ -29,6 +29,8 @@ class App.VO.Base extends Backbone.RelationalModel
     'material.opacity': 1
     'material.blending': 0
     'material.doublesided': false
+    'fadeInDuration': 1
+    'fadeOutDuration': 1
 
   attributeControls: ->
     'screenPosition': { type: 'area', name: 'Screen Posistion', pos: [0, 0, 2, 3] }
@@ -37,9 +39,12 @@ class App.VO.Base extends Backbone.RelationalModel
     'rotation.z': { type: 'angle', name: 'Rot. Z', pos: [4, 0, 1, 2] }
     'scale': { type: 'exponentialTracker', name: 'Scale', pos: [2, 2, 3, 1] }
     'material.blending' : { type: 'switcher', name: 'Blending', options: [ 'Normal', 'Add', 'Subtract', 'Multiply' ], pos: [10, 0, 1, 3] }
-    'active' : { type: 'toggle', name: 'Active', color: '#ffffff', pos: [11, 0, 1, 3] }
+    'visible' : { type: 'toggle', name: 'Active', color: '#ffffff', hasOutlet: false, pos: [11, 0, 1, 1] }
+    'active' : { type: 'toggle', name: 'Active', color: '#ffffff', pos: [11, 1, 1, 2] }
     'material.color': { type: 'color', name: 'Color', pos: [5, 0, 4, 3] }
     'material.opacity': { type: 'slider', name: 'Opacity', pos: [9, 0, 1, 3] }
+    'fadeInDuration': { type: 'slider', name: 'Fade In', max: 5, pos: [0, 3, 6, 1] }
+    'fadeOutDuration': { type: 'slider', name: 'Fade Out', max: 5, pos: [6, 3, 6, 1] }
 
   subModelTypes:
     group: 'App.VO.Group'
@@ -186,25 +191,25 @@ class App.VO.Base extends Backbone.RelationalModel
     if currentlyActive
       hasCustom = true for behavior in @get('behaviors').toArray() when behavior instanceof App.Behaviors.Outro
       if hasCustom then @trigger 'deactivate'
-      else @defaultOutro(immediate)
+      @defaultOutro(immediate)
     else
       hasCustom = true for behavior in @get('behaviors').toArray() when behavior instanceof App.Behaviors.Intro
       if hasCustom then @trigger 'activate'
-      else @defaultIntro(immediate)
+      @defaultIntro(immediate)
 
   defaultIntro: (immediate = false) =>
     if immediate
       @onChange @set({ 'material.opacity': 1 })
     else
       @proxy = { prop: @get('material.opacity') }
-      TweenLite.to @proxy, 0.4, { prop: 1, onUpdateParams: ["{self}"], onUpdate: (tween) => @set 'material.opacity', tween.target.prop }
+      TweenLite.to @proxy, @get('fadeInDuration'), { prop: 1, onUpdateParams: ["{self}"], onUpdate: (tween) => @set 'material.opacity', tween.target.prop }
 
   defaultOutro: (immediate = false) =>
     if immediate
       @onChange @set({ 'material.opacity': 0 })
     else
       @proxy = { prop: @get('material.opacity') }
-      TweenLite.to @proxy, 0.4, { prop: 0, onUpdateParams: ["{self}"], onUpdate: (tween) => @set 'material.opacity', tween.target.prop }
+      TweenLite.to @proxy, @get('fadeOutDuration'), { prop: 0, onUpdateParams: ["{self}"], onUpdate: (tween) => @set 'material.opacity', tween.target.prop }
 
 
   moveToTrack: (newTrackId) ->

@@ -1,7 +1,7 @@
 class App.Views.SceneView extends Backbone.View
   template: JST.scene
   events:
-    'touchstart #scene-button': 'sceneMsg'
+    'touchstart .streamToggle': 'toggleVideoStreaming'
   render: ->
     @$el.html @template()
     @
@@ -80,6 +80,8 @@ class App.Views.SceneView extends Backbone.View
         # @updateInteractionObject()
 
     document.ontouchmove = (event) -> event.preventDefault()
+
+  toggleVideoStreaming: -> App.sceneConnection.toggleVideoStreaming()
 
   updateInteractionObject: =>
     translateX = @objectPropeties.positionX * App.config.renderer.lowDisplayWidth

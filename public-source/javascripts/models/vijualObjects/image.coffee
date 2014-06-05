@@ -5,7 +5,7 @@ class App.VO.Image extends App.VO.BaseCanvas
     'image.image': 'DefaultImage.png'
 
   attributeControls: -> $.extend super,
-    'image.image': { type: 'media', mediaType: 'images', name: 'Image', pos: [8, 0, 4, 3] }
+    'image.image': { type: 'media', mediaType: 'images', name: 'Image', pos: [8, 0, 4, 4] }
 
   initialize: (attributes, options) ->
     super

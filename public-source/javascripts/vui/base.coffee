@@ -212,7 +212,9 @@ class App.VUI.Base extends Backbone.View
 
   propertyValueLabel: ->
     switch @dataType
-      when 'float' then @values.propertyValue.toFixed(2)
+      when 'float'
+        return "#{ @values.propertyValue[0].toFixed(2) } : #{ @values.propertyValue[1].toFixed(2) }" if _.isArray(@values.propertyValue)
+        @values.propertyValue.toFixed(2)
       when 'integer' then parseInt(@values.propertyValue)
       when 'angle' then App.utils.degrees(@values.propertyValue).toFixed() + "°"
       when 'coordinates' then "#{ @values.propertyValue[0].toFixed(2) } : #{ @values.propertyValue[1].toFixed(2) }"

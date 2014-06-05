@@ -54,7 +54,8 @@ App.VUI.Builder = (layout) ->
         App.VUI.controls[ "#{ control.uuid } #{ control.key }" ] = controller
         # controller.disable()
         $controls.append controller.render().el
-        controller.dataType = control.dataType if control.dataType
+        if control.dataType
+          controller.dataType = control.dataType
         controller.setControlState control.state if control.state
       else
         $controls.append $("<div class='control #{ control.type }'></div>").css

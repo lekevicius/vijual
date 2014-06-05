@@ -200,7 +200,7 @@ this["JST"]["scene"] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 
-buf.push("<div class=\"canvas-holder\"><div class=\"r\"><canvas id=\"sceneCanvas\"" + (jade.attr("width", (App.config.renderer.lowDisplayWidth), true, false)) + (jade.attr("height", (App.config.renderer.lowDisplayHeight), true, false)) + "></canvas></div></div><div id=\"interaction-layer\" class=\"interaction-layer\"><div class=\"interaction-object\"></div></div>");;return buf.join("");
+buf.push("<div class=\"canvas-holder\"><div class=\"r\"><canvas id=\"sceneCanvas\"" + (jade.attr("width", (App.config.renderer.lowDisplayWidth), true, false)) + (jade.attr("height", (App.config.renderer.lowDisplayHeight), true, false)) + "></canvas></div></div><div id=\"interaction-layer\" class=\"interaction-layer\"><div class=\"interaction-object\"></div></div><div class=\"sceneActions\"><button class=\"streamToggle\">Stream</button></div>");;return buf.join("");
 };
 
 this["JST"]["sidebar"] = function template(locals) {

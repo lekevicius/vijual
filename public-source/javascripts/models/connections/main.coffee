@@ -1,6 +1,6 @@
 class App.Connections.Main extends App.Connections.Base
   protocol: 'main'
-  streamCanvas: true
+  streamCanvas: false
 
   initialize: (attributes, options) ->
     super
@@ -104,6 +104,8 @@ class App.Connections.Main extends App.Connections.Base
   props_deleteRecording: (keyData) =>
     App.VO.GlobalLookup[ keyData.id ].deleteRecording keyData.key, keyData.recordingNumber
     App.mainConnection.updateRecordings keyData
+
+  scene_toggleVideoStreaming: => @streamCanvas = !@streamCanvas
 
   server_cameOnline: (who) =>
     super

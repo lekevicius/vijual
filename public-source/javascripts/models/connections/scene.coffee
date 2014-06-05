@@ -21,6 +21,8 @@ class App.Connections.Scene extends App.Connections.Base
     else
       App.sceneView.$interactionObject.hide()
 
+  toggleVideoStreaming: -> @sendDocument 'main', 'toggleVideoStreaming'
+
   sendDataUpdates: =>
     if 'main' in @onlinePeers
       changes = App.sceneController.dumpChanges()

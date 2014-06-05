@@ -12,10 +12,10 @@ class App.VO.Drawing extends App.VO.BaseCanvas
 
   attributeControls: -> $.extend super,
     'drawing.color': { type: 'color', name: 'Color', pos: [8, 0, 4, 3] }
-    'drawing.mode': { type: 'switcher', name: 'Draw / Move', options: [ 'Draw', 'Move' ], pos: [0, 3, 3, 1] }
-    'drawing.clear': { type: 'triggerButton', name: 'Clear', pos: [3, 3, 1, 1] }
-    'drawing.opacity': { type: 'slider', name: 'Line Opacity', pos: [4, 3, 4, 1] }
-    'drawing.linewidth': { type: 'integerSlider', name: 'Line width', min: 1, max: 30, pos: [8, 3, 4, 1] }
+    'drawing.mode': { type: 'switcher', name: 'Draw / Move', options: [ 'Draw', 'Move' ], pos: [0, 4, 3, 1] }
+    'drawing.clear': { type: 'triggerButton', name: 'Clear', pos: [3, 4, 1, 1] }
+    'drawing.opacity': { type: 'slider', name: 'Line Opacity', pos: [4, 4, 4, 1] }
+    'drawing.linewidth': { type: 'integerSlider', name: 'Line width', min: 1, max: 30, pos: [8, 4, 4, 1] }
 
   initialize: (attributes, options) ->
     super

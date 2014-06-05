@@ -13,13 +13,13 @@ class App.VO.Text extends App.VO.BaseCanvas
   textAlignments: [ 'left', 'center', 'right' ]
 
   attributeControls: -> $.extend super,
-    'text.text': { type: 'textarea', name: 'Text', pos: [8, 0, 4, 3] }
-    'text.color': { type: 'color', name: 'Color', pos: [0, 3, 4, 3] }
-    'text.font': { type: 'list', name: 'Font', options: App.fonts, pos: [8, 3, 4, 3] }
-    'text.align': { type: 'switcher', name: 'Align', options: @textAlignments, pos: [4, 3, 4, 1] }
-    'text.bold': { type: 'toggle', name: 'Bold', pos: [4, 4, 2, 1] }
-    'text.italic': { type: 'toggle', name: 'Italic', pos: [6, 4, 2, 1] }
-    'text.lineheight': { type: 'slider', name: 'Line Height', step: 0.1, min: 0.1, max: 3, pos: [4, 5, 4, 1] }
+    'text.text': { type: 'textarea', name: 'Text', pos: [8, 0, 4, 4] }
+    'text.color': { type: 'color', name: 'Color', pos: [0, 4, 4, 3] }
+    'text.font': { type: 'list', name: 'Font', options: App.fonts, pos: [8, 4, 4, 3] }
+    'text.align': { type: 'switcher', name: 'Align', options: @textAlignments, pos: [4, 4, 4, 1] }
+    'text.bold': { type: 'toggle', name: 'Bold', pos: [4, 5, 2, 1] }
+    'text.italic': { type: 'toggle', name: 'Italic', pos: [6, 5, 2, 1] }
+    'text.lineheight': { type: 'slider', name: 'Line Height', step: 0.1, min: 0.1, max: 3, pos: [4, 6, 4, 1] }
 
   initialize: (attributes, options) ->
     super

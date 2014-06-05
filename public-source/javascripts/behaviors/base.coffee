@@ -2,7 +2,6 @@ class App.Behaviors.Base extends Backbone.RelationalModel
 
   subModelTypes:
 
-    fadeIn: 'App.Behaviors.FadeIn'
     rotateIn: 'App.Behaviors.RotateIn'
     scaleIn: 'App.Behaviors.ScaleIn'
     slideInFromSide: 'App.Behaviors.SlideInFromSide'
@@ -10,7 +9,6 @@ class App.Behaviors.Base extends Backbone.RelationalModel
     bounceInFromSide: 'App.Behaviors.BounceInFromSide'
     bounceInDirectionally: 'App.Behaviors.BounceInDirectionally'
 
-    fadeOut: 'App.Behaviors.FadeOut'
     rotateOut: 'App.Behaviors.RotateOut'
     scaleOut: 'App.Behaviors.ScaleOut'
     slideOutToSide: 'App.Behaviors.SlideOutToSide'
@@ -51,6 +49,7 @@ class App.Behaviors.Base extends Backbone.RelationalModel
     multiply: 'App.Behaviors.Multiply'
     divide: 'App.Behaviors.Divide'
     modulus: 'App.Behaviors.Modulus'
+    screenPositionSetter: 'App.Behaviors.ScreenPositionSetter'
 
     random: 'App.Behaviors.Random'
     walk: 'App.Behaviors.Walk'

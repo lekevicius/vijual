@@ -26,8 +26,8 @@ App.resetState()
 App.config =
   defaultActivationState: false
   renderer:
-    width: 800
-    height: 600
+    width: 1024
+    height: 768
     lowWidth: 160
     lowHeight: 120
     lowDisplayWidth: 640
@@ -143,14 +143,6 @@ App.defaultDocument = '
                 "xSpin":2,
                 "ySpin":1,
                 "zSpin":1.2
-              },
-              {
-                "id": "11ecc5f6-dd37-4cc2-b97d-c98ab49d425d",
-                "type":"fadeIn"
-              },
-              {
-                "id": "8a2ae282-884d-4797-8ed5-9c43933e4674",
-                "type":"fadeOut"
               },
               {
                 "id": "8759b271-c47b-4d2d-92ef-af0fe4bffcfc",

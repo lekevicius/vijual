@@ -69,10 +69,11 @@ class App.Views.MainView extends Backbone.View
             console.log "Showing #{ term }"
             object.setToFirstResult(term) for object in App.document.get('selectedObjects').toArray() when object.get('type') is 'noun'
           'create (a ) (an ) (new ) *term': (term) ->
+            console.log "Creating #{ term }"
+            if term is 'thing' or term is 'object' then term = 'noun'
             if term in _.keys(App.objectTypes)
-              console.log "Creating #{ term }"
               App.mainView.newObjectWithType term
-        annyang.start()
+        annyang.start autoRestart: false
 
     charObjects =
       c: 'color'

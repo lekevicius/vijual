@@ -38,7 +38,7 @@ class App.Track extends Backbone.RelationalModel
 
   constructor: ->
     @scene = new THREE.Scene()
-    @globalLight = new THREE.AmbientLight( '#222' )
+    @globalLight = new THREE.AmbientLight( '#000' )
     @scene.add @globalLight
     @frontLight = new THREE.PointLight( '#fff', 0.4 )
     @frontLight.position.set 0, 0, 23.2

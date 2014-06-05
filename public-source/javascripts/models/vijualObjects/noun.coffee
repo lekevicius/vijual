@@ -15,9 +15,9 @@ class App.VO.Noun extends App.VO.BaseCanvas
       'shape.color': '#000000'
 
   attributeControls: -> $.extend super,
-    'shape.search': { type: 'text', name: 'Search', pos: [0, 3, 4, 1] }
-    'shape.term': { type: 'list', name: 'Term', options: @resultNames, pos: [4, 3, 4, 3] }
-    'shape.id': { type: 'list', name: 'Icon', options: @iconIds, pos: [8, 3, 4, 3] }
+    'shape.search': { type: 'text', name: 'Search', pos: [0, 4, 4, 1] }
+    'shape.term': { type: 'list', name: 'Term', options: @resultNames, pos: [4, 4, 4, 3] }
+    'shape.id': { type: 'list', name: 'Icon', options: @iconIds, pos: [8, 4, 4, 3] }
     'shape.color': { type: 'color', name: 'Color', pos: [8, 0, 4, 3] }
 
   initialize: (attributes, options) ->
